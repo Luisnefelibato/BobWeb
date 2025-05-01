@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: bob-financial-pm
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: OLLAMA_URL
+        value: https://evaenespanol.loca.lt
+      - key: MODEL_NAME
+        value: llama3:8b
